@@ -1,0 +1,34 @@
+.side_bar{
+    width: 240px;
+    height: auto;
+    min-height: 100%;
+    position: absolute;
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    background: var(--background-color);
+    color: white;  
+}
+.side_bar ul{
+    padding-left: 20px;
+    list-style: none;
+}
+.side_bar h2{
+    text-align: center;
+}
+.side_bar ul li{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    min-width: 150px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+}
+.side_bar ul li p{
+    font-size: 13px;
+    margin-left: 15px;
+}
+.side_bar ul li:hover{
+    background-color: var(--main-color);
+}

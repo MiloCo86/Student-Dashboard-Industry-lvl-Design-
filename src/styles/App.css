@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+:root{
+  --background-color: #091220;
+  --main-color: #21d19f;
+}
+.main_container{
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 240px 3fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas: 
+      "sidebar navbar"
+      "sidebar studentDisplay";
+  font-family: "Inter", sans-serif;
+}
