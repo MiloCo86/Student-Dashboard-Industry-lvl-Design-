@@ -1,0 +1,45 @@
+.student_display_container{
+    display: grid;
+    grid-area: studentDisplay;  
+}
+.student_navbar{
+    margin-top: 5px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+span {
+    color: var(--main-color);
+}
+.student_navbar h3{
+    margin-left: 20px;
+}
+
+.student_cards_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,210px);
+    grid-auto-flow: row;
+    padding-top: 5px;
+    height: 48rem;
+    overflow: scroll;
+    
+}
+.student_cards_container::-webkit-scrollbar{
+    width: 12px;
+ }
+ .student_cards_container::-webkit-scrollbar-track{
+     display: hidden;
+ }
+ .student_cards_container::-webkit-scrollbar-thumb{
+     border-radius: 8px;
+     height: 60px;
+     background-color: var(--main-color);
+ }
+
+ @media (max-height: 560px) {
+    .student_cards_container{
+        height: 26.2rem;
+    }
+    
+  }

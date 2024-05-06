@@ -1,21 +1,21 @@
 
 import "../styles/MainSideBar.css"
 
-function MainSideBar(){
+function MainSideBar({cohortList, currentCohort}){
+
+
+    const CohortList = cohortList.map((cohort,idx)=>{
+        return (
+            <li key={idx} onClick={()=>currentCohort(cohort)}><p>{cohort}</p></li>
+        )
+    })
 
     return(
         <div className="side_bar">
             <h2>Pursuit</h2>
             <ul>
-                <li><p>All Students</p></li>
-                <li><p>Winter 2026</p></li>
-                <li><p>Fall 2026</p></li>
-                <li><p>Summer 2026</p></li>
-                <li><p>Spring 2026</p></li>
-                <li><p>Winter 2025</p></li>
-                <li><p>Fall 2025</p></li>
-                <li><p>Summer 2025</p></li>
-                <li><p>Spring 2025</p></li>
+                <li onClick={()=>currentCohort('All Students')}><p>All Students</p></li>
+                {CohortList}
             </ul>
         </div>
     )

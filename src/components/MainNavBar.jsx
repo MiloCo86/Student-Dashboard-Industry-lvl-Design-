@@ -1,14 +1,18 @@
 
 import "../styles/MainNavBar.css"
+import filterSelectStyles from '../styles/filterSelectStyles'
 import Select from "react-select"
+import dropMenuStyleTheme from '../styles/dropMenuStyleTheme'
+
+import searchIcon from '../assets/Search-icon.png'
 
 
 function MainNavBar(){
 
-    const selectOptions = [
-        {label:'Firts Name', value:'name'},
-        {label:'Last Name', value:'last'},
-        {label:'Codewards Score', value:'codewards'},
+    const selectFilterOptions = [
+        {label:'Ready to graduate ', value:'ready'},
+        {label:'On track to graduate', value:'onTrack'},
+        {label:'tbd', value:'codewards'},
     ]
 
     function handleSelectChange (event){
@@ -20,34 +24,20 @@ function MainNavBar(){
             <div className="main_navbar_filters">
                 <Select
                     defaultValue={{label:'Filter Users by:', value:'empty'}} 
-                    options={selectOptions}
+                    options={selectFilterOptions}
                     onChange={handleSelectChange}
-                    theme={(theme) => ({
-                        ...theme,
-                        borderRadius: 20,
-                        colors: {
-                          ...theme.colors,
-                          primary50: '#5effd1',
-                          primary25: '#a8fde5',
-                          primary: '#21d19f',
-                        },
-                      })}
-                    styles={{
-                        control:(styles)=>{
-                            return{
-                                ...styles,
-                                marginLeft:20,
-                                width: 200,
-                            }
-                        },
-                    }}
+                    theme={dropMenuStyleTheme}
+                    styles={filterSelectStyles}
                 />
                 <input className="search_input" type="text" placeholder="Search Users" />
-                <p className="search_icon">🔍</p>
+                <img className="search_icon" src={searchIcon} />
                     
             </div>
             <div className="main_navbar_userInfo">
-                <p>Camilo Paez</p>
+                <div>
+                    <p><strong>Welcome Back</strong></p>
+                    <p>Camilo Paez</p>
+                </div>
                 <img src="https://wallpapers-clan.com/wp-content/uploads/2022/08/default-pfp-18.jpg" />
             </div>           
         </div>

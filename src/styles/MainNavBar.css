@@ -12,21 +12,23 @@
 }
 .search_input{
     width: 200px;
-    height: 35px;
+    height: 27px;
     margin-left: 20px;
     padding-left: 15px;
     border: 1px solid lightgrey;
     border-radius: 40px;
-    font-size: 16px;
+    font-size: 13px;
 }
 .search_input:focus{
     outline-color: var(--main-color);
 }
 .search_icon{
     cursor: pointer;
-    margin-left: -30px;
+    margin-left: -28px;
+    margin-bottom: 2px;
 }
 .main_navbar_userInfo{
+    margin-right: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -35,6 +37,11 @@
 .main_navbar_userInfo img{
     width: 50px;
     border-radius: 50%;
+}
+.main_navbar_userInfo p{
+    text-align: center;
+    margin: 0;
+    font-size: 13px;
 }
 
 
