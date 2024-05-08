@@ -1,7 +1,9 @@
 import formatBirthday from '../utils/formatBirthday';
 import closeIcon from "../assets/Xmark-icon.png"
 
-function StudentCard({student}){
+import "../styles/StudentCard.css"
+
+function StudentCard({student, closeCard}){
 
     const birthday = formatBirthday(student.dob)
     const cwCurrentTotal = Number(student.codewars.current.total);
@@ -28,29 +30,29 @@ function StudentCard({student}){
                         <p>{student.username}</p>
                         <p>Birthday: {birthday}</p>
                     </div>
-                    <img className='close_icon' src={closeIcon}/>
+                    <img onClick={closeCard} className='close_icon' src={closeIcon}/>
                 </div>
 
                 <div className="extra_info">
                     <div>
                         <h6>Codewards:</h6>
-                        <p><span>Current Total:</span> {student.codewars.current.total}</p>
-                        <p><span>Last Week:</span> {student.codewars.current.lastWeek}</p>
-                        <p><span>Goal:</span> {student.codewars.goal.total}</p>
-                        <p><span>Percent of Goal Achieved:</span> {goalPercent}%</p>
+                        <p>Current Total: {student.codewars.current.total}</p>
+                        <p>Last Week: {student.codewars.current.lastWeek}</p>
+                        <p>Goal: {student.codewars.goal.total}</p>
+                        <p>Percent of Goal Achieved: {goalPercent}%</p>
                     </div>
                     <div>
                         <h6>Scores:</h6>
-                        <p><span>Assignments:</span> {scAssignments}%</p>
-                        <p><span>Projects:</span> {scProjects}%</p>
-                        <p><span>Assessments:</span> {scAssessments}%</p>
+                        <p>Assignments: {scAssignments}%</p>
+                        <p>Projects: {scProjects}%</p>
+                        <p>Assessments: {scAssessments}%</p>
                     </div>
                     <div>
                         <h6>Certifications:</h6>
-                        <p><span>Resume:</span> {certResume}</p>
-                        <p><span>LinkedIn:</span> {certlinkedin}</p>
-                        <p><span>Mock Interview:</span> {certMockInterview}</p>
-                        <p><span>GitHub:</span> {certGitHub}</p>
+                        <p>Resume: {certResume}</p>
+                        <p>LinkedIn: {certlinkedin}</p>
+                        <p>Mock Interview: {certMockInterview}</p>
+                        <p>GitHub: {certGitHub}</p>
                     </div>
                 </div>
             </div>

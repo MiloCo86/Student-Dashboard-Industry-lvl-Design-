@@ -13,8 +13,55 @@
 }
 
 .student_card{
+    width: 600px;
+    height: 250px;
     position: absolute;
-    top: 40%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    top: 50%;
     left: 40%;
     transform: translate(-50%,-50%);
+    border: 1px solid black;
+}
+.student_info{
+    display: flex;
+    width: 500px;
+}
+.basic_info{
+    margin-left: 20px;
+}
+.close_icon{
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    margin-left: 340px;
+}
+
+.profile_pic{
+    width: 70px;
+    border-radius: 50%;
+}
+
+.extra_info{
+    margin-top: 20px;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 0;
+}
+.extra_info div{
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+.extra_info h6{
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.extra_info p{
+    margin: 0;
+    margin-bottom: 7px;
 }

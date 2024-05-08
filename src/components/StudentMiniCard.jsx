@@ -1,11 +1,21 @@
+import StudentCard from "./StudentCard"
+
 import "../styles/StudentMiniCard.css"
 import formatBirthday from '../utils/formatBirthday'
 import resizeIcon from "../assets/Resize-icon.png"
+import { useState } from "react"
 
 
 function StudentMiniCard({student}){
 
     const birthday = formatBirthday(student.dob)
+
+    const [showFullCard,setShowFullCard] = useState(false)
+
+    function ShowCard(){
+        setShowFullCard(!showFullCard);
+    }
+    
 
     return (
         <div className="mini_card">
@@ -14,7 +24,8 @@ function StudentMiniCard({student}){
             <h4>{student.names.preferredName} {student.names.surname}</h4>
             <p>{student.username}</p>
             <p>Birthday: {birthday}</p>
-            <button>More Details</button>
+            <button onClick={ShowCard}>More Details</button>
+            {showFullCard && <StudentCard student={student} closeCard={ShowCard}/>}
         </div>
     )
 }
